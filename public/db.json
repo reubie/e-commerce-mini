@@ -1,0 +1,78 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Bluetooth Headphones",
+      "description": "Premium noise-cancelling headphones with 30-hour battery life. Perfect for music lovers and professionals.",
+      "price": 129.99,
+      "category": "electronics",
+      "image": "/images/headphones.jpg",
+      "rating": 4.5,
+      "stock": 25,
+      "brand": "SoundMax",
+      "features": ["Noise Cancelling", "30h Battery", "Bluetooth 5.0"]
+    },
+    {
+      "id": 2,
+      "name": "Organic Cotton T-Shirt",
+      "description": "Comfortable and sustainable cotton t-shirt. Available in multiple colors and sizes.",
+      "price": 24.99,
+      "category": "clothing",
+      "image": "/images/tshirt.jpg",
+      "rating": 4.2,
+      "stock": 50,
+      "brand": "EcoWear",
+      "features": ["100% Organic", "Multiple Colors", "Sizes XS-XXL"]
+    },
+    {
+      "id": 3,
+      "name": "Smart Fitness Watch",
+      "description": "Advanced fitness tracking with heart rate monitor, GPS, and 7-day battery life.",
+      "price": 199.99,
+      "category": "electronics",
+      "image": "/images/smartwatch.jpg",
+      "rating": 4.7,
+      "stock": 15,
+      "brand": "FitTech",
+      "features": ["Heart Rate Monitor", "GPS", "7-day Battery"]
+    },
+    {
+      "id": 4,
+      "name": "Ceramic Coffee Mug Set",
+      "description": "Beautiful handcrafted ceramic mugs, perfect for your morning coffee or tea.",
+      "price": 34.99,
+      "category": "home",
+      "image": "/images/mugs.jpg",
+      "rating": 4.3,
+      "stock": 30,
+      "brand": "ArtisanHome",
+      "features": ["Handcrafted", "Microwave Safe", "Set of 4"]
+    },
+    {
+      "id": 5,
+      "name": "Leather Crossbody Bag",
+      "description": "Stylish and practical leather bag with adjustable strap and multiple compartments.",
+      "price": 89.99,
+      "category": "accessories",
+      "image": "/images/bag.jpg",
+      "rating": 4.4,
+      "stock": 20,
+      "brand": "LeatherCraft",
+      "features": ["Genuine Leather", "Adjustable Strap", "Multiple Pockets"]
+    },
+    {
+      "id": 6,
+      "name": "Wireless Charging Pad",
+      "description": "Fast wireless charging pad compatible with all Qi-enabled devices.",
+      "price": 49.99,
+      "category": "electronics",
+      "image": "/images/charger.jpg",
+      "rating": 4.1,
+      "stock": 40,
+      "brand": "ChargeTech",
+      "features": ["15W Fast Charging", "Qi Compatible", "LED Indicator"]
+    }
+  ],
+  "favorites": [],
+  "cart": []
+} 
