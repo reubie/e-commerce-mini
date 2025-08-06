@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { store } from '../../infrastructure/store';
 import { queryClient } from '../../infrastructure/query';
+import { LanguageProvider } from './LanguageProvider';
 
 // App providers wrapper
 interface AppProvidersProps {
@@ -14,7 +15,9 @@ export const AppProviders = ({ children }: AppProvidersProps) => {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </QueryClientProvider>
     </Provider>
   );

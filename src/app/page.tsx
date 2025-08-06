@@ -8,11 +8,13 @@ import { ProductSearch } from '../presentation/components/products/ProductSearch
 import { LoadingSpinner } from '../presentation/components/ui/LoadingSpinner';
 import { useProducts } from '../infrastructure/query/hooks/useProducts';
 import { ProductFilters } from '../domain/types';
+import { useTranslations } from '../presentation/hooks/useTranslations';
 
 // Main page
 export default function HomePage() {
   const [filters, setFilters] = useState<ProductFilters>({});
   const { data: products, isLoading, error } = useProducts(filters);
+  const { t } = useTranslations();
 
   // Filter products client-side
   const filteredProducts = useMemo(() => {
@@ -46,7 +48,7 @@ export default function HomePage() {
   if (isLoading) {
     return (
       <Layout>
-        <LoadingSpinner message="Loading products..." />
+        <LoadingSpinner message={t('loading')} />
       </Layout>
     );
   }
@@ -56,7 +58,7 @@ export default function HomePage() {
       <Layout>
         <Container>
           <Typography variant="h6" color="error" align="center">
-            Error loading products
+            {t('error')}
           </Typography>
         </Container>
       </Layout>
@@ -68,10 +70,10 @@ export default function HomePage() {
       <Container maxWidth="lg">
         <Box sx={{ mb: 4 }}>
           <Typography variant="h4" component="h1" gutterBottom>
-            Welcome to E-Commerce Mini
+            {t('welcome')}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            Check out our products
+            {t('subtitle')}
           </Typography>
         </Box>
         
@@ -79,7 +81,7 @@ export default function HomePage() {
         
         {filteredProducts.length === 0 ? (
           <Typography variant="h6" align="center" color="text.secondary">
-            No products found
+            {t('noProducts')}
           </Typography>
         ) : (
           <ProductGrid products={filteredProducts} />

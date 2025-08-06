@@ -3,9 +3,7 @@
 import { useState } from 'react';
 import { IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import { Language } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
-import { setLanguage } from '../../../infrastructure/store/slices/userPreferencesSlice';
-import { RootState } from '../../../infrastructure/store';
+import { useLanguage } from '../../providers/LanguageProvider';
 
 // Languages
 const languages = [
@@ -16,8 +14,7 @@ const languages = [
 
 // Language selector
 export const LanguageSelector = () => {
-  const dispatch = useDispatch();
-  const currentLang = useSelector((state: RootState) => (state.userPreferences as any).language);
+  const { language, setLanguage } = useLanguage();
   const [menuAnchor, setMenuAnchor] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -29,11 +26,11 @@ export const LanguageSelector = () => {
   };
 
   const handleLanguageChange = (langCode: 'en' | 'es' | 'fr') => {
-    dispatch(setLanguage(langCode));
+    setLanguage(langCode);
     handleClose();
   };
 
-  const selectedLang = languages.find(lang => lang.code === currentLang);
+  const selectedLang = languages.find(lang => lang.code === language);
 
   return (
     <>
@@ -65,7 +62,7 @@ export const LanguageSelector = () => {
           <MenuItem
             key={lang.code}
             onClick={() => handleLanguageChange(lang.code as 'en' | 'es' | 'fr')}
-            selected={lang.code === currentLang}
+            selected={lang.code === language}
           >
             <Typography sx={{ mr: 1 }}>{lang.flag}</Typography>
             {lang.name}
