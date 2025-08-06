@@ -1,24 +1,27 @@
 # E-Commerce Mini App
 
-A responsive e-commerce web application built with Next.js, featuring clean architecture, performance optimization, and modern UI/UX.
+A responsive e-commerce web app built with Next.js. Features clean architecture, performance optimization, and modern UI/UX.
 
-## Features
+## What it does
 
 - **Product Catalog**: Browse and search products with filtering
-- **Product Details**: Product info with images and features
+- **Product Details**: View product info with images and features
 - **Shopping Cart**: Add, remove, and update cart items
 - **Favorites**: Save and manage favorite products
-- **Responsive Design**: Mobile-first design that works on all devices
+- **Responsive Design**: Works on mobile, tablet, desktop
 - **Modern UI**: Built with Material-UI components
 - **State Management**: Redux Toolkit for global state
 - **Data Fetching**: React Query for efficient API calls
+- **Multi-language Support**: English, Spanish, and French
+- **Dark/Light Mode**: Theme toggle functionality
+- **Error Boundaries**: Graceful error handling
 
 ## Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
 - **UI Library**: Material-UI (MUI)
-- **State Management**: Redux Toolkit
+- **State Management**: Redux Toolkit + React Context
 - **Data Fetching**: TanStack Query (React Query)
 - **Styling**: MUI System + CSS
 - **Mock Backend**: JSON Server
@@ -35,7 +38,8 @@ src/
 │   └── query/             # React Query hooks
 └── presentation/          # UI components
     ├── components/        # Reusable components
-    └── providers/         # App providers
+    ├── providers/         # App providers
+    └── hooks/            # Custom hooks
 ```
 
 ## Getting Started
@@ -99,6 +103,7 @@ This project follows clean architecture principles:
 - Product grid with search and filtering
 - Add to cart and favorite functionality
 - Responsive design for all screen sizes
+- Multi-language support
 
 ### Product Details
 - Detailed product information
@@ -117,6 +122,43 @@ This project follows clean architecture principles:
 - Add/remove from favorites
 - Clear all favorites
 
+### Additional Features
+- **Language Switching**: Toggle between English, Spanish, and French
+- **Theme Toggle**: Switch between light and dark modes
+- **Error Boundaries**: Graceful error handling throughout the app
+- **Loading States**: Smooth loading indicators
+- **Responsive Design**: Works on mobile, tablet, desktop, and large screens
+
+## Testing the Application
+
+1. **Start both servers**:
+   ```bash
+   # Terminal 1: Start JSON server
+   npm run server
+   
+   # Terminal 2: Start Next.js dev server
+   npm run dev
+   ```
+
+2. **Test Responsiveness**:
+   - Open browser dev tools
+   - Test on mobile (375px), tablet (768px), desktop (1024px), and large screens (1440px+)
+
+3. **Test Features**:
+   - Browse products on main page
+   - Search and filter products
+   - Add items to cart
+   - Add items to favorites
+   - View product details
+   - Test language switching (header language selector)
+   - Test theme toggle (header theme button)
+
+4. **Test CRUD Operations**:
+   - Add/remove from cart
+   - Update quantities
+   - Add/remove from favorites
+   - Clear cart/favorites
+
 ## Development Notes
 
 - Uses Next.js App Router for modern routing
@@ -124,3 +166,19 @@ This project follows clean architecture principles:
 - React Query for efficient data fetching and caching
 - Material-UI for consistent, accessible components
 - JSON Server for mock API endpoints
+- React Context for theme and language state
+- Error boundaries for graceful error handling
+- Mobile-first responsive design
+
+## API Endpoints
+
+The JSON server provides the following endpoints:
+- `GET /products` - Get all products
+- `GET /products/:id` - Get specific product
+- `GET /cart` - Get cart items
+- `POST /cart` - Add item to cart
+- `PUT /cart/:id` - Update cart item
+- `DELETE /cart/:id` - Remove from cart
+- `GET /favorites` - Get favorites
+- `POST /favorites` - Add to favorites
+- `DELETE /favorites/:id` - Remove from favorites
