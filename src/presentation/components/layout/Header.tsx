@@ -4,6 +4,8 @@ import { AppBar, Toolbar, Typography, Badge, IconButton, Box } from '@mui/materi
 import { ShoppingCart, Favorite, Menu } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../infrastructure/store';
+import { LanguageSelector } from '../ui/LanguageSelector';
+import { ThemeToggle } from '../ui/ThemeToggle';
 import Link from 'next/link';
 
 // Header component
@@ -20,7 +22,10 @@ export const Header = () => {
           </Link>
         </Typography>
         
-        <Box sx={{ display: 'flex', gap: 1 }}>
+        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+          <LanguageSelector />
+          <ThemeToggle />
+          
           <Link href="/favorites">
             <IconButton color="inherit">
               <Badge badgeContent={favoritesCount} color="error">

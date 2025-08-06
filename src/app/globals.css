@@ -1,3 +1,5 @@
+@import '../styles/animations.scss';
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -26,6 +28,11 @@ a {
   text-decoration: none;
 }
 
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.2s ease;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -42,4 +49,49 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* Smooth page transitions */
+.page-transition {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Enhanced focus states for accessibility */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Animation for product cards */
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Button animations */
+.btn-animate {
+  transition: all 0.2s ease;
+}
+
+.btn-animate:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-animate:active {
+  transform: translateY(0);
 }

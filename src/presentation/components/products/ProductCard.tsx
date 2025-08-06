@@ -29,14 +29,32 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Card 
+      sx={{ 
+        height: '100%', 
+        display: 'flex', 
+        flexDirection: 'column',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+        '&:hover': {
+          transform: 'translateY(-4px)',
+          boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
+        },
+      }}
+      className="product-card fade-in"
+    >
       <Link href={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <CardMedia
           component="img"
           height="200"
           image={product.image}
           alt={product.name}
-          sx={{ objectFit: 'cover' }}
+          sx={{ 
+            objectFit: 'cover',
+            transition: 'transform 0.3s ease',
+            '&:hover': {
+              transform: 'scale(1.05)',
+            },
+          }}
         />
       </Link>
       
@@ -67,6 +85,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             startIcon={<AddShoppingCart />}
             onClick={handleAddToCart}
             sx={{ flex: 1 }}
+            className="btn-animate"
           >
             Add to Cart
           </Button>
@@ -75,6 +94,12 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             onClick={handleToggleFavorite}
             color={isFavorite ? 'error' : 'default'}
             size="small"
+            sx={{
+              transition: 'all 0.2s ease',
+              '&:hover': {
+                transform: 'scale(1.1)',
+              },
+            }}
           >
             {isFavorite ? <Favorite /> : <FavoriteBorder />}
           </IconButton>
