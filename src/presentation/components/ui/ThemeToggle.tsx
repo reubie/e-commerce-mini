@@ -2,22 +2,15 @@
 
 import { IconButton, Tooltip } from '@mui/material';
 import { LightMode, DarkMode } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleTheme } from '../../../infrastructure/store/slices/userPreferencesSlice';
-import { RootState } from '../../../infrastructure/store';
+import { useTheme } from '../../providers/ThemeProvider';
 
 // Theme toggle
 export const ThemeToggle = () => {
-  const dispatch = useDispatch();
-  const theme = useSelector((state: RootState) => (state.userPreferences as any).theme);
-
-  const handleToggle = () => {
-    dispatch(toggleTheme());
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <Tooltip title={theme === 'light' ? 'Dark Mode' : 'Light Mode'}>
-      <IconButton color="inherit" onClick={handleToggle}>
+      <IconButton color="inherit" onClick={toggleTheme}>
         {theme === 'light' ? <DarkMode /> : <LightMode />}
       </IconButton>
     </Tooltip>
