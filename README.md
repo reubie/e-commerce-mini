@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Commerce Mini App
+
+A responsive e-commerce web application built with Next.js, featuring clean architecture, performance optimization, and modern UI/UX.
+
+## Features
+
+- **Product Catalog**: Browse and search products with filtering
+- **Product Details**: Detailed product information with images and features
+- **Shopping Cart**: Add, remove, and update cart items
+- **Favorites**: Save and manage favorite products
+- **Responsive Design**: Mobile-first design that works on all devices
+- **Modern UI**: Built with Material-UI components
+- **State Management**: Redux Toolkit for global state
+- **Data Fetching**: React Query for efficient API calls
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **UI Library**: Material-UI (MUI)
+- **State Management**: Redux Toolkit
+- **Data Fetching**: TanStack Query (React Query)
+- **Styling**: MUI System + CSS
+- **Mock Backend**: JSON Server
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js app router pages
+├── domain/                 # Domain types and interfaces
+├── infrastructure/         # External dependencies
+│   ├── services/          # API services
+│   ├── store/             # Redux store and slices
+│   └── query/             # React Query hooks
+└── presentation/          # UI components
+    ├── components/        # Reusable components
+    └── providers/         # App providers
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/reubie/e-commerce-mini.git
+cd e-commerce-mini
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the JSON server (mock backend):
+```bash
+npm run server
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. In a new terminal, start the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run server` - Start JSON server (mock backend)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Architecture
 
-## Deploy on Vercel
+This project follows clean architecture principles:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Domain Layer**: Core business logic and types
+- **Infrastructure Layer**: External dependencies (API, state management)
+- **Presentation Layer**: UI components and user interface
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Key Design Patterns
+
+- **Atomic Design**: Component structure follows atomic design principles
+- **SOLID Principles**: Clean, maintainable, and extensible code
+- **Separation of Concerns**: Clear boundaries between layers
+- **Type Safety**: Full TypeScript implementation
+
+## Features Overview
+
+### Main Page
+- Product grid with search and filtering
+- Add to cart and favorite functionality
+- Responsive design for all screen sizes
+
+### Product Details
+- Detailed product information
+- Image gallery
+- Add to cart and favorite actions
+- Product features and specifications
+
+### Shopping Cart
+- Cart item management
+- Quantity controls
+- Order summary with tax calculation
+- Clear cart functionality
+
+### Favorites
+- Saved products list
+- Add/remove from favorites
+- Clear all favorites
+
+## Development Notes
+
+- Uses Next.js App Router for modern routing
+- Redux Toolkit for predictable state management
+- React Query for efficient data fetching and caching
+- Material-UI for consistent, accessible components
+- JSON Server for mock API endpoints
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is for educational purposes and technical assessment.
