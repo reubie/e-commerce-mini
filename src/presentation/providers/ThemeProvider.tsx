@@ -2,8 +2,6 @@
 
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../infrastructure/store';
 
 // Theme provider wrapper
 interface ThemeProviderProps {
@@ -11,12 +9,10 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const currentTheme = useSelector((state: RootState) => (state.userPreferences as any).theme);
-
-  // Create theme
+  // Create theme with default light mode
   const theme = createTheme({
     palette: {
-      mode: currentTheme || 'light',
+      mode: 'light',
       primary: {
         main: '#1976d2',
       },
@@ -24,8 +20,8 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
         main: '#dc004e',
       },
       background: {
-        default: currentTheme === 'dark' ? '#121212' : '#ffffff',
-        paper: currentTheme === 'dark' ? '#1e1e1e' : '#ffffff',
+        default: '#ffffff',
+        paper: '#ffffff',
       },
     },
     typography: {
@@ -35,7 +31,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       MuiAppBar: {
         styleOverrides: {
           root: {
-            backgroundColor: currentTheme === 'dark' ? '#1e1e1e' : '#1976d2',
+            backgroundColor: '#1976d2',
           },
         },
       },
