@@ -6,19 +6,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../../../infrastructure/store/slices/userPreferencesSlice';
 import { RootState } from '../../../infrastructure/store';
 
-// Theme toggle component
+// Theme toggle
 export const ThemeToggle = () => {
   const dispatch = useDispatch();
-  const currentTheme = useSelector((state: RootState) => (state.userPreferences as any).theme);
+  const theme = useSelector((state: RootState) => (state.userPreferences as any).theme);
 
-  const handleThemeToggle = () => {
+  const handleToggle = () => {
     dispatch(toggleTheme());
   };
 
   return (
-    <Tooltip title={currentTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}>
-      <IconButton color="inherit" onClick={handleThemeToggle}>
-        {currentTheme === 'light' ? <DarkMode /> : <LightMode />}
+    <Tooltip title={theme === 'light' ? 'Dark Mode' : 'Light Mode'}>
+      <IconButton color="inherit" onClick={handleToggle}>
+        {theme === 'light' ? <DarkMode /> : <LightMode />}
       </IconButton>
     </Tooltip>
   );

@@ -47,7 +47,7 @@ export default function ProductDetailsPage() {
       <Layout>
         <Container>
           <Typography variant="h6" color="error" align="center">
-            Product not found or error loading product.
+            Product not found
           </Typography>
           <Box sx={{ textAlign: 'center', mt: 2 }}>
             <Link href="/" style={{ textDecoration: 'none' }}>
@@ -102,7 +102,7 @@ export default function ProductDetailsPage() {
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <Rating value={product.rating} readOnly />
               <Typography variant="body2" sx={{ ml: 1 }}>
-                ({product.rating} stars)
+                {product.rating} stars
               </Typography>
             </Box>
             
@@ -124,9 +124,9 @@ export default function ProductDetailsPage() {
             
             <Divider sx={{ my: 2 }} />
             
-            <Typography variant="h6" gutterBottom>
-              Features:
-            </Typography>
+                      <Typography variant="h6" gutterBottom>
+            Features
+          </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 3 }}>
               {product.features.map((feature, index) => (
                 <Chip key={index} label={feature} size="small" />

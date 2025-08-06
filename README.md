@@ -5,7 +5,7 @@ A responsive e-commerce web application built with Next.js, featuring clean arch
 ## Features
 
 - **Product Catalog**: Browse and search products with filtering
-- **Product Details**: Detailed product information with images and features
+- **Product Details**: Product info with images and features
 - **Shopping Cart**: Add, remove, and update cart items
 - **Favorites**: Save and manage favorite products
 - **Responsive Design**: Mobile-first design that works on all devices

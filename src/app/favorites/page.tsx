@@ -37,7 +37,7 @@ export default function FavoritesPage() {
               No favorites yet
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph>
-              Start adding products to your favorites to see them here.
+              Add some products to favorites
             </Typography>
             <Link href="/" style={{ textDecoration: 'none' }}>
               <Button variant="contained" size="large">

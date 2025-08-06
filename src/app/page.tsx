@@ -14,7 +14,7 @@ export default function HomePage() {
   const [filters, setFilters] = useState<ProductFilters>({});
   const { data: products, isLoading, error } = useProducts(filters);
 
-  // Filter products client-side for better UX
+  // Filter products client-side
   const filteredProducts = useMemo(() => {
     if (!products) return [];
     
@@ -56,7 +56,7 @@ export default function HomePage() {
       <Layout>
         <Container>
           <Typography variant="h6" color="error" align="center">
-            Error loading products. Please try again.
+            Error loading products
           </Typography>
         </Container>
       </Layout>
@@ -71,7 +71,7 @@ export default function HomePage() {
             Welcome to E-Commerce Mini
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            Discover amazing products at great prices
+            Check out our products
           </Typography>
         </Box>
         
@@ -79,7 +79,7 @@ export default function HomePage() {
         
         {filteredProducts.length === 0 ? (
           <Typography variant="h6" align="center" color="text.secondary">
-            No products found. Try adjusting your filters.
+            No products found
           </Typography>
         ) : (
           <ProductGrid products={filteredProducts} />

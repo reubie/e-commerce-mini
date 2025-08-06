@@ -13,7 +13,7 @@ interface ThemeProviderProps {
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const currentTheme = useSelector((state: RootState) => (state.userPreferences as any).theme);
 
-  // Create theme based on current theme state
+  // Create theme
   const theme = createTheme({
     palette: {
       mode: currentTheme || 'light',

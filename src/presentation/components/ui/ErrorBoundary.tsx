@@ -56,10 +56,10 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
           >
             <Error sx={{ fontSize: 64, color: 'error.main', mb: 2 }} />
             <Typography variant="h5" gutterBottom>
-              Something went wrong
+              Oops! Something went wrong
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph>
-              We encountered an unexpected error. Please try refreshing the page.
+              We hit an error. Try refreshing the page.
             </Typography>
             <Button
               variant="contained"

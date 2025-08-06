@@ -70,7 +70,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
           <Rating value={product.rating} readOnly size="small" />
           <Typography variant="body2" sx={{ ml: 1 }}>
-            ({product.rating})
+            {product.rating}
           </Typography>
         </Box>
         

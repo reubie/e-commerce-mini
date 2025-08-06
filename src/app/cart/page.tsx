@@ -35,7 +35,7 @@ export default function CartPage() {
               Your cart is empty
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph>
-              Add some products to your cart to get started.
+              Add some products to cart
             </Typography>
             <Link href="/" style={{ textDecoration: 'none' }}>
               <Button variant="contained" size="large">
@@ -149,24 +149,24 @@ export default function CartPage() {
                 </Typography>
                 
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                  <Typography>Subtotal:</Typography>
+                  <Typography>Subtotal</Typography>
                   <Typography>${total.toFixed(2)}</Typography>
                 </Box>
                 
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                  <Typography>Shipping:</Typography>
+                  <Typography>Shipping</Typography>
                   <Typography>Free</Typography>
                 </Box>
                 
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                  <Typography>Tax:</Typography>
+                  <Typography>Tax</Typography>
                   <Typography>${(total * 0.1).toFixed(2)}</Typography>
                 </Box>
                 
                 <Divider sx={{ my: 2 }} />
                 
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 3 }}>
-                  <Typography variant="h6">Total:</Typography>
+                  <Typography variant="h6">Total</Typography>
                   <Typography variant="h6" color="primary">
                     ${(total * 1.1).toFixed(2)}
                   </Typography>
